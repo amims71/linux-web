@@ -26,4 +26,16 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1';
 flush priviliges;
 exit
 
+sudo a2enmod rewrite
+
+/etc/apache2/apache2.conf
+<Directory /var/www/> 
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+</Directory>
+
+sudo systemctl restart apache2
+
+
 ```
